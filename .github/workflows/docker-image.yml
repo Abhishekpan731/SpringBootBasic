@@ -71,8 +71,8 @@ jobs:
     steps:
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/springbootbasic:${{ github.sha }} .
-        docker push ${{ secrets.DOCKER_USERNAME }}/springbootbasic:${{ github.sha }}
+        docker build -t abhishekbit96/springbootbasic:${{ github.sha }} .
+        docker push abhishekbit96/springbootbasic:${{ github.sha }}
 
   setup_k8s:
     runs-on: ubuntu-latest
