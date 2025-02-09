@@ -66,13 +66,13 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
   build_push_docker:
-    runs-on: ubuntu-latest
-    needs: docker_login
-    steps:
-    - name: Build and push Docker image
-      run: |
-        docker build -t abhishekbit96/springbootbasic:${{ github.sha }} .
-        docker push abhishekbit96/springbootbasic:${{ github.sha }}
+            runs-on: ubuntu-latest
+            needs: docker_login
+            steps:
+            - name: Build and push Docker image
+              run: |
+                docker build -t abhishekbit96/springbootbasic:${{ github.sha }} -f path/to/Dockerfile .
+                docker push abhishekbit96/springbootbasic:${{ github.sha }}
 
   setup_k8s:
     runs-on: ubuntu-latest
